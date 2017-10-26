@@ -1,0 +1,11 @@
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/convenience_static.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtl_adsb.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtl_eeprom.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtl_fm.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtl_power.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtl_sdr.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtl_tcp.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtl_test.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtlsdr_shared.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/src/CMakeFiles/rtlsdr_static.dir
+/home/pi/Downloads/dump1090/rtl-sdr/build/CMakeFiles/uninstall.dir

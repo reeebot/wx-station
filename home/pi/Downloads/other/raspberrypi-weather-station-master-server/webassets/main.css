@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+    background-color: #000;
+    background: url('img/day.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+ }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body {
+  font-family: "Open Sans", Helvetica, arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #222;
+
+  margin: 0; }
+  @media screen and (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 14px; } }
+
+a, a:visited {
+  color: #36435A; }
+
+
+h2 {
+  font-size: 4em; 
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 0 0; }
+
+h4 {
+  margin: 1em 0;
+  font-size: 1.2em;
+  font-weight: 400; }
+
+h5 {
+  font-size: 0.8em;
+  font-weight: 400; }
+
+
+
+#container {
+    background-color:rgba(255,255,255,0.8);
+    margin: auto auto;
+    width: 800px;
+/*    border: 1px solid #F00;*/
+    padding: 1.5em;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px; /* future proofing */
+    -khtml-border-radius: 30px; /* for old Konqueror browsers */
+}
+
+section {
+    width: 500px;
+    float: left;
+    margin: auto auto;
+/*    border: 1px solid #0F0;*/
+}
+
+aside {
+    width: 200px;
+    float: right;
+    margin: auto auto;
+/*    border: 1px solid #0FF; */
+    margin-bottom: .5em;
+
+}
+
+article,footer {
+    clear: both;
+/*     border: 1px solid #000; */
+    margin-top: 1em;
+    width: 100%;
+}
+article img {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}

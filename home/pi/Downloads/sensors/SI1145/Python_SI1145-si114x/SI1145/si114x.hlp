@@ -1,0 +1,405 @@
+Help on module si114x:
+
+NAME
+    si114x
+
+DESCRIPTION
+    # Author: Joe Gutting
+    # With use of Adafruit SI1145 library for Arduino, Adafruit_GPIO.I2C & BMP Library by Tony DiCola
+    #
+    # Permission is hereby granted, free of charge, to any person obtaining a copy
+    # of this software and associated documentation files (the "Software"), to deal
+    # in the Software without restriction, including without limitation the rights
+    # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    # copies of the Software, and to permit persons to whom the Software is
+    # furnished to do so, subject to the following conditions:
+    #
+    # Modified by Khill NX7H
+
+CLASSES
+    builtins.object
+        SI114X
+    
+    class SI114X(builtins.object)
+     |  # Class creates SI114X instance
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, address=96, busnum=1)
+     |      (default [I2C address of SI1145=0x60], [I2C bus number])
+     |      intitalizes to default mode (UV,Vis,IR and Prox 1)
+     |      enables all interupts and starts in autonomous mode
+     |  
+     |  readIR(self)
+     |      #returns IR light levels
+     |  
+     |  readParam(self, p)
+     |      (parameter) returns value of parameter, no decoding
+     |  
+     |  readProx(self)
+     |      # Returns "Proximity" - assumes an IR LED is attached to LED
+     |  
+     |  readUV(self)
+     |      # returns the UV index * 100 (divide by 100 to get the index)
+     |  
+     |  readVisible(self)
+     |      #returns visible + IR light levels
+     |  
+     |  writeParam(self, p, v)
+     |      writes value to the parameter memory and verifies value is written
+     |      
+     |      (parameter, value)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+DATA
+    ALS_AUTO = 14
+    ALS_FORCE = 6
+    ALS_PAUSE = 10
+    BUSADDR = 2
+    GET_CAL = 18
+    NOP = 0
+    PARAM_ADCCOUNTER_511CLK = 112
+    PARAM_ADCMISC_RANGE_HI = 32
+    PARAM_ADCMISC_RANGE_NORM = 0
+    PARAM_ADCMUX_GRD_VOLT = 37
+    PARAM_ADCMUX_LARGEIR = 3
+    PARAM_ADCMUX_NO_DIODE = 6
+    PARAM_ADCMUX_SMALLIR = 0
+    PARAM_ADCMUX_TEMP = 101
+    PARAM_ADCMUX_VDD = 117
+    PARAM_ADCMUX_VIS = 2
+    PARAM_ALSENCODE = 6
+    PARAM_ALSIRADCGAIN = 30
+    PARAM_ALSIRADCMISC = 31
+    PARAM_ALSIRADCMUX = 14
+    PARAM_ALSIRADCOUNTER = 29
+    PARAM_ALSVISADCGAIN = 17
+    PARAM_ALSVISADCMISC = 18
+    PARAM_ALSVISADCOUNTER = 16
+    PARAM_AUXADCMUX = 15
+    PARAM_CHLIST = 1
+    PARAM_CHLIST_ENALSIR = 32
+    PARAM_CHLIST_ENALSVIS = 16
+    PARAM_CHLIST_ENAUX = 64
+    PARAM_CHLIST_ENPS1 = 1
+    PARAM_CHLIST_ENPS2 = 2
+    PARAM_CHLIST_ENPS3 = 4
+    PARAM_CHLIST_ENUV = 128
+    PARAM_I2CADDR = 0
+    PARAM_PS1ADCMUX = 7
+    PARAM_PS2ADCMUX = 8
+    PARAM_PS3ADCMUX = 9
+    PARAM_PSADCGAIN = 11
+    PARAM_PSADCMISC = 12
+    PARAM_PSADCMISC_PSMODE_PROX = 4
+    PARAM_PSADCMISC_PSMODE_RAW = 0
+    PARAM_PSADCOUNTER = 10
+    PARAM_PSENCODE = 5
+    PARAM_PSLED12SEL = 2
+    PARAM_PSLED12SEL_PS1LED1 = 1
+    PARAM_PSLED12SEL_PS1LED2 = 2
+    PARAM_PSLED12SEL_PS1LED3 = 4
+    PARAM_PSLED12SEL_PS1NONE = 0
+    PARAM_PSLED12SEL_PS2LED1 = 16
+    PARAM_PSLED12SEL_PS2LED2 = 32
+    PARAM_PSLED12SEL_PS2LED3 = 64
+    PARAM_PSLED12SEL_PS2NONE = 0
+    PARAM_PSLED3SEL = 3
+    PARAM_QUERY = 128
+    PARAM_SET = 160
+    PSALS_AUTO = 15
+    PSALS_FORCE = 7
+    PSALS_PAUSE = 11
+    PS_AUTO = 13
+    PS_FORCE = 5
+    PS_PAUSE = 9
+    REG_ALSIRDATA0 = 36
+    REG_ALSIRDATA1 = 37
+    REG_ALSVISDATA0 = 34
+    REG_ALSVISDATA1 = 35
+    REG_CHIPSTAT = 48
+    REG_COMMAND = 24
+    REG_HWKEY = 7
+    REG_INTCFG = 3
+    REG_INTCFG_INTMODE = 2
+    REG_INTCFG_INTOE = 1
+    REG_IRQEN = 4
+    REG_IRQEN_ALSEVERYSAMPLE = 1
+    REG_IRQEN_PS1EVERYSAMPLE = 4
+    REG_IRQEN_PS2EVERYSAMPLE = 8
+    REG_IRQEN_PS3EVERYSAMPLE = 16
+    REG_IRQMODE1 = 5
+    REG_IRQMODE2 = 6
+    REG_IRQSTAT = 33
+    REG_IRQSTAT_ALS = 1
+    REG_MEASRATE0 = 8
+    REG_MEASRATE1 = 9
+    REG_PARAMRD = 46
+    REG_PARAMWR = 23
+    REG_PARTID = 0
+    REG_PS1DATA0 = 38
+    REG_PS1DATA1 = 39
+    REG_PS2DATA0 = 40
+    REG_PS2DATA1 = 41
+    REG_PS3DATA0 = 42
+    REG_PS3DATA1 = 43
+    REG_PSLED21 = 15
+    REG_PSLED3 = 16
+    REG_PSRATE = 10
+    REG_RESPONSE = 32
+    REG_REVID = 1
+    REG_SEQID = 2
+    REG_UCOEFF0 = 19
+    REG_UCOEFF1 = 20
+    REG_UCOEFF2 = 21
+    REG_UCOEFF3 = 22
+    REG_UVINDEX0 = 44
+    REG_UVINDEX1 = 45
+    RESET = 1
+    SI1145_ADDR = 96
+
+FILE
+    /home/pi/Python_SI1145/SI1145/si114x.py
+
+
+Help on module si1145:
+
+NAME
+    si1145 - # by Khill NX7H
+
+CLASSES
+    si114x.SI114X(builtins.object)
+        SI1145
+    
+    class SI1145(si114x.SI114X)
+     |  Method resolution order:
+     |      SI1145
+     |      si114x.SI114X
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  calc_gaincorr(self)
+     |      Calculate gain correction factor based on the gain, range
+     |      and align settings.
+     |      
+     |      Returns  a dictionary { channel: correctionfactor }
+     |  
+     |  chan_sel_encode(self, *pargs)
+     |      encode channels for CHLIST
+     |  
+     |  decodeCHLIST(self)
+     |      decodeCHLIST()
+     |      returns a list of the channels currently enabled
+     |  
+     |  enableInt(self, int_cfg=1, int_en_ALS=1, int_en_PS1=4)
+     |      enables interrupts.  Default: all interrupts.
+     |      
+     |      (enable interupt pin, enable individual channels)
+     |      both must be set to enable interupt pin to go live
+     |      
+     |      Returns tuple (Infconfig, int_enable)
+     |  
+     |  readChan_enable(self)
+     |      # read Chlist channels enabled not decoded
+     |  
+     |  readDarkCnt(self)
+     |      calibrates the dark count
+     |      
+     |      sets global variables
+     |      returns (visible dark cnt, ir dark cnt)
+     |  
+     |  readGain(self, chan)
+     |      read gain parameters
+     |      
+     |      returns a tuple (gain, rng, rec_period, align)
+     |      the PS1 align is not decoded
+     |  
+     |  readInt_en(self)
+     |      # returns contents of IntCFG and IRQENable register as a tuple
+     |  
+     |  readInt_stat(self)
+     |      # return Interupt status register
+     |  
+     |  readLux(self, coef=(5.41, -0.08), readdark=False)
+     |      Returns Lux Calculation
+     |      
+     |      ( (visible_coefficient, IR_coefficient), read dark count )
+     |      
+     |      Uses first 2 entries from lux_coef dictionary.
+     |      default is reference with no cover.
+     |      Corrected for dark count, gain settings.  Does not check for
+     |      overflow.  Set readdark to true to calculate an average dark count.
+     |  
+     |  readMeasRate(self)
+     |      # read Measuring rate. Value * 31.25 uS = measuremnt interval
+     |  
+     |  readReg(self, reg)
+     |      # Returns 8 bit unsigned value of the requested register
+     |  
+     |  readResponse(self)
+     |      Returns value in response register.
+     |      
+     |      This register is set in response to a write to the command
+     |      register or an overflow error in measurements.  If bit 7 is set
+     |      Error status is written in the lower nibble.  If it is not
+     |      set, the lower nibble contains a count of the successfule commands.
+     |      It is cleared by writting a NOOP or Reset command to Command register.
+     |  
+     |  readSensor(self, chan)
+     |      returns the sensor assignment for configurable channels
+     |      
+     |      Sensor settings:  0x00 Small IR photodiode
+     |                        0x02 Visible photodiode
+     |                        0x03 Large IR photodiode
+     |                        0x06 no photodiode (reference for ambient IR
+     |                        or visble light)
+     |                        0x25 Gnd voltage (reference for voltage and temp)
+     |                        0x65 temperature need to subtract gnd voltage
+     |                        0x75 Vdd voltage need to subtract gnd voltage
+     |      
+     |      returns (channel, sensor selected, bool(enabled status))
+     |  
+     |  restart(self, *chans, meas_rate=255, auto=True, int_enable=True)
+     |      restart ([ channel list, measuring rate, autonomous mode, enable interupts])
+     |      defaults to all channels except aux, autonomous and enables interrupts
+     |      
+     |      Gain is set to normal signal and default gain.  Default sensor selection
+     |  
+     |  selectSensor(self, chan, sensor)
+     |      Selects the sensor for the configurable channels.
+     |      No error checking done.  Channel must be enabled seperately.
+     |      
+     |      (channel, sensor)
+     |      
+     |      Allowable channels: PS1 -- small and large IR                                         
+     |                          Raw -- all sensors
+     |                          Aux -- temp and Vdd
+     |                          IR  -- small and large IR
+     |                          Raw and PS1 are mutually exclusive
+     |      
+     |      Sensor settings:  0x00 Small IR photodiode
+     |                        0x02 Visible photodiode
+     |                        0x03 Large IR photodiode
+     |                        0x06 no photodiode (reference for ambient IR or visble light)
+     |                        0x25 Gnd voltage (reference for voltage and temp)
+     |                        0x65 temperature need to subtract gnd voltage
+     |                        0x75 Vdd voltage need to subtract gnd voltage
+     |      
+     |      returns (channel, sensor setting)
+     |  
+     |  setup_led(self, led_current=3, sensor=3)
+     |      sets up LED current and select which sensor to use for proximty
+     |      measurements.  The 1145 only has 1 LED available.
+     |      
+     |      Defaults to ca. 22 mA.   0 = 0 mA to 0x0f = ca. 359 mA,
+     |      !!!!!Use with caution!!!!!!!
+     |      
+     |      TODO generalize for 1146 and 47
+     |  
+     |  writeChan_enable(self, *pargs)
+     |      Enables the desired channels for use.
+     |      
+     |      Expects char values for desired channels.
+     |      Valid args are 'Vis', 'UV', 'IR', 'Aux' and 'PS1'.
+     |      Set all values at the same time.
+     |        
+     |      Sets default to UV, IR, Vis and PS1 if no parameters sent
+     |      
+     |      Returns the value writen to the register
+     |  
+     |  writeCommand(self, command)
+     |      Writes command to command register.
+     |      
+     |      (command)
+     |       
+     |      User should check and clear response register  before
+     |      sending a series of commands. 
+     |      
+     |      returns the value in the Response register.
+     |  
+     |  writeGain(self, chan, gain=0, rng=0, rec_period=-1, align=0)
+     |      sets gain (integration time), recovery time, sensitivity
+     |      range and encoding alignment for selected channel
+     |      
+     |      (channel, gain, range, recovery time, alignment)
+     |      
+     |      defaults: gain 1x, range Normal Signal, Rec_period 511 clocks, align MSB
+     |      recovery period is automatically set to 2 ** 1's complement of
+     |      gain if not set explicitly. If range set for High signal rec is set
+     |      to 1 clock
+     |      returns (gain, range, recovery period, align)
+     |  
+     |  writeMeasRate(self, rate=255)
+     |      set time for next measurement
+     |      
+     |      (rate)  sets measuring rate.
+     |      Value is multilplied by 31.25 uS
+     |      default to 0xff * 31.25 uS = 7.968 mS
+     |  
+     |  writeReg(self, reg, val)
+     |      writes 8 bit value to register
+     |      
+     |      (register, unsigned value)
+     |      Verifies write and returns value writen to register
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  channelD = {'IR': 30, 'PS1': 11, 'Vis': 17}
+     |  
+     |  irdark = 253
+     |  
+     |  lux_coef = {'Ref': ............}
+     |  
+     |  visdark = 260
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from si114x.SI114X:
+     |  
+     |  __init__(self, address=96, busnum=1)
+     |      (default [I2C address of SI1145=0x60], [I2C bus number])
+     |      intitalizes to default mode (UV,Vis,IR and Prox 1)
+     |      enables all interupts and starts in autonomous mode
+     |  
+     |  readIR(self)
+     |      #returns IR light levels
+     |  
+     |  readParam(self, p)
+     |      (parameter) returns value of parameter, no decoding
+     |  
+     |  readProx(self)
+     |      # Returns "Proximity" - assumes an IR LED is attached to LED
+     |  
+     |  readUV(self)
+     |      # returns the UV index * 100 (divide by 100 to get the index)
+     |  
+     |  readVisible(self)
+     |      #returns visible + IR light levels
+     |  
+     |  writeParam(self, p, v)
+     |      writes value to the parameter memory and verifies value is written
+     |      
+     |      (parameter, value)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from si114x.SI114X:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FILE
+    /home/pi/Python_SI1145/SI1145/si1145.py
+
+

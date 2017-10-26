@@ -1,0 +1,1 @@
+<p><p><p1>&nbsp;37&deg;<br></p1><p2><b>47% RH</b><br></p2><p3>30.18 inHg</p3><p><p><p><p>
