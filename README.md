@@ -1,2 +1,2 @@
 # wx-station
-hilltopWx software
+hilltopWx custom weather software
